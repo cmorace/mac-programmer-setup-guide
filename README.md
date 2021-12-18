@@ -144,6 +144,62 @@ alias activate='source /home/.virtualenvs/env_name/bin/activate'
 
 ---
 
+## Install rbenv
+
+``` bash
+brew install rbenv
+```
+
+Check which ruby versions are available to install
+
+``` bash
+rbenv install -l 
+```
+
+Install ruby e.g.,
+
+``` bash
+rbenv install 3.0.3
+rbenv global 3.0.3
+echo 'eval "$(rbenv init - zsh)"' >> ~/.zshrc
+```
+
+start a new shell and check you have the right ruby version in your path
+
+``` bash
+ruby -v
+```
+
+---
+
+## Install jekyll
+
+``` bash
+gem install --user-install bundler jekyll
+```
+
+if you get a path error, export the path e.g.,
+
+``` bash
+echo 'export PATH="/Users/ccm/.local/share/gem/ruby/3.0.0/bin:$PATH"' >> ~/.zshrc
+```
+
+create a new jekyll project to test everything is working
+
+``` bash
+gem install bundler jekyll
+jekyll new my-awesome-site
+cd my-awesome-site
+bundle exec jekyll serve
+# => Now browse to http://localhost:4000
+```
+
+If there is an error about `webrick`
+
+``` bash
+bundle add webrick
+```
+
 ## Install Visual Studio Code
 
 download the release version [here](https://code.visualstudio.com/)
